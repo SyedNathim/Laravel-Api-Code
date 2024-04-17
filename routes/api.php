@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\ProductsCategoryController;
 use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('student', [StudentsController::class,'index']);
+// Route::get('student', [StudentsController::class,'index']);
 
 Route::get('users', [UsersController::class,'index']);
 
 Route::post('/userRegister', [UsersController::class, 'store']);
+
+Route::get('/productsCategories', [ProductsCategoryController::class, 'categoryShow']);
